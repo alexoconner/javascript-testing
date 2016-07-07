@@ -1,5 +1,5 @@
 
-export default addition( numbers ) {
+export default function addition( numbers ) {
 
     // check for array
     if ( !Array.isArray(numbers) ) {
