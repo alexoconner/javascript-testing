@@ -8,7 +8,7 @@ test( 'addition of array function testing', (t) => {
     // testing array error
     t.throws( () => {
         addition([1, '3', 2])
-    }, new Error(), 'invalid array test');
+    }, /array must contain integers only/, 'invalid array test');
 
     // testing addition
     let testAddition = addition([0, 2, 3]);
