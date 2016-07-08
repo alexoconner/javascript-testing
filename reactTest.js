@@ -1,4 +1,5 @@
 
+import './jsdom';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -17,7 +18,7 @@ export class ButtonComponent extends React.Component {
 }
 
 
-class ReactTest extends React.Component {
+export default class ReactTest extends React.Component {
     constructor( props ) {
         super( props );
 
@@ -43,10 +44,9 @@ class ReactTest extends React.Component {
                 <ButtonComponent
                     label="Increase Number"
                     onClick={ () => this.onButtonClick() }
+                    ref="Button"
                 />
             </div>
         )
     }
 }
-
-ReactDOM.render(<ReactTest />, document.getElementById('App'));
