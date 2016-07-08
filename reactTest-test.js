@@ -11,15 +11,14 @@ test( 'testing react test component ', (t) => {
     t.plan(1);
 
     const appState = { counter: 0 };
-    const button = ReactDOM.findDOMNode(button);
 
     const testApp = ReactTestUtils.renderIntoDocument(
         <ReactTest />
     );
 
-    const testAppNode = ReactDOM.findDOMNode(button);
+    const button = ReactTestUtils.findRenderedDOMComponentWithTag(testApp, 'ButtonComponent');
 
-    // ReactTestUtils.Simulate.click(button);
+    ReactTestUtils.Simulate.click(button);
 
     t.end();
 });
