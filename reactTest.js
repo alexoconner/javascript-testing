@@ -10,7 +10,7 @@ export class ButtonComponent extends React.Component {
     render() {
         return (
             <div>
-                <button>{ this.props.label }</button>
+                <button onClick={ this.props.onClick }>{ this.props.label }</button>
             </div>
         )
     }
@@ -27,6 +27,7 @@ class ReactTest extends React.Component {
     }
 
     onButtonClick() {
+        console.log('click');
         this.setState({
             counter: this.state.counter + 1
         });
@@ -41,6 +42,7 @@ class ReactTest extends React.Component {
                 </div>
                 <ButtonComponent
                     label="Increase Number"
+                    onClick={ () => this.onButtonClick() }
                 />
             </div>
         )

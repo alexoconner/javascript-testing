@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "prebuild": "rm -rf ./dist && mkdir ./dist",
-    "watch:scripts": "watchify reactTest.js -o ./dist/index.js",
+    "watch:scripts": "watchify reactTest.js -o ./dist/index.js -v",
     "build:scripts": "browserify reactTest.js -o ./dist/index.js",
     "build:html": "cp index.html ./dist/index.html",
     "build": "npm run build:scripts && npm run build:html",
@@ -20,7 +20,7 @@
     ]
   },
   "browserify": {
-      "transform": ["babelify"]
+    "transform": ["babelify"]
   },
   "author": "Alexander Skrabl",
   "license": "ISC",
