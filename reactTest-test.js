@@ -16,9 +16,12 @@ test( 'testing react test component ', (t) => {
         <ReactTest />
     );
 
-    const button = ReactTestUtils.findRenderedDOMComponentWithTag(testApp, 'ButtonComponent');
+    const button = ReactTestUtils.findRenderedDOMComponentWithClass(testApp, 'myButton');
 
     ReactTestUtils.Simulate.click(button);
+
+    // after click counter should be 1 up to initial app state
+    t.equal(appState.counter + 1, testApp.state.counter, 'testing if new counter state is equal to expected');
 
     t.end();
 });
