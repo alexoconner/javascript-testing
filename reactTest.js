@@ -11,7 +11,7 @@ export class ButtonComponent extends React.Component {
     render() {
         return (
             <div>
-                <button onClick={ this.props.onClick }>{ this.props.label }</button>
+                <button onClick={ this.props.onClick } className={ this.props.className }>{ this.props.label }</button>
             </div>
         )
     }
@@ -44,7 +44,7 @@ export default class ReactTest extends React.Component {
                 <ButtonComponent
                     label="Increase Number"
                     onClick={ () => this.onButtonClick() }
-                    ref="Button"
+                    className="myButton"
                 />
             </div>
         )
